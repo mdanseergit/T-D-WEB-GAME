@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Truth or Dare | Spin Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="background"></div>
+
+<header>
+  <h1>TRUTH <span>/</span> DARE</h1>
+  <p>Spin the Wheel & Choose Your Fate</p>
+</header>
+
+<section class="levels">
+  <button onclick="setLevel(1)">Easy</button>
+  <button onclick="setLevel(2)">Hard</button>
+  <button class="danger" onclick="setLevel(3)">Extreme 18+ 🔥</button>
+</section>
+
+<p class="level-indicator" id="levelIndicator">Selected Level: Easy</p>
+
+<main class="layout">
+
+  <!-- WHEEL -->
+  <div class="wheel-area">
+    <div class="pointer"></div>
+    <img src="spin.png" id="wheel">
+
+    <h2 id="currentPlayer">Add Players</h2>
+
+    <div class="controls">
+      <button class="spin-btn" onclick="spinWheel()"
+  style="background:linear-gradient(45deg,#28d6f5,#ff4fd8);
+         border:none;
+         padding:14px 40px;
+         border-radius:30px;
+         font-size:1.1rem;
+         font-weight:700;
+         letter-spacing:2px;">
+  SPIN
+</button>
+
+      <button class="spin-btn" onclick="nextSpin()"   style="background:linear-gradient(45deg,#28d6f5,#ff4fd8);
+         border:none;
+         padding:14px 40px;
+         border-radius:30px;
+         font-size:1.1rem;
+         font-weight:700;
+         letter-spacing:2px;">>NEXT 🔄</button>
+    </div>
+  </div>
+
+  <!-- SIDE PANEL -->
+  <div class="panel">
+    <h3>Players</h3>
+    <input id="playerInput" placeholder="Enter name">
+    <button class="add-player-btn" onclick="addPlayer()">Add Player</button>
+    <ul id="playerList"></ul>
+  </div>
+
+</main>
+
+<!-- QUESTIONS LIST -->
+<section class="questions-section">
+  <div class="question-card">
+    <h3>Truth Questions</h3>
+    <ul id="truthList"></ul>
+  </div>
+
+  <div class="question-card">
+    <h3>Dare Challenges</h3>
+    <ul id="dareList"></ul>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
